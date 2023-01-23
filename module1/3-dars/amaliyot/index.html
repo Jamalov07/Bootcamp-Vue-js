@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>registration</title>
+  </head>
+  <body>
+    <div class="container form-container">
+      <img class="logo" src="./images/logo (1).png" alt="" />
+      <h1 class="title">Регистрация профиля</h1>
+      <form action="#">
+        <label for="phone_number"
+          ><p>Номер телефона</p>
+          <input
+            id="phone_number"
+            type="text"
+            name="phone_number"
+            placeholder="+7(900) 000-00-00"
+          />
+          <span>utf_pole_name</span>
+        </label>
+        <label for="email">
+          <p>Email (необязательно)</p>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@gmail.com"
+          />
+          <span>utf_pole_name</span>
+        </label>
+        <label for="password">
+          <p>Пароль</p>
+          <input type="password" id="password" name="password" />
+          <span>utf_pole_name</span>
+        </label>
+        <label for="again_password">
+          <p>Повторите пароль</p>
+          <input type="password" id="again_password" name="again_password" />
+          <span>utf_pole_name</span>
+        </label>
+      </form>
+      <p class="information">
+        Нажимая на кнопку “Зарегистрироваться”, вы соглашаетесь на
+        <a href="#">обработку персональных данных.</a>
+      </p>
+      <button class="btn">Зарегистрироваться</button>
+      <a class="login" href="#">Уже зарегистрированы? Войти </a>
+    </div>
+  </body>
+</html>
