@@ -1,0 +1,11 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  background-color: red;
+  height: 400px;
+  width: 500px;
+}
