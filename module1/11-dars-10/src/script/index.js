@@ -5,6 +5,7 @@ const closeBtn = document.querySelector(".close-btn");
 const modalContent = document.querySelector(".modal-content");
 const signUpBtn = document.querySelector(".register-btn");
 const introProduct = document.querySelector(".intro__product--info");
+const wrapperCard = document.querySelector(".wrapper-cards");
 
 signUpBtn.addEventListener("click", () => {
   modalWindow.classList.remove("hidden");
@@ -74,32 +75,75 @@ cards.forEach((card) => {
   introProduct.append(newCard);
 });
 
-let icon = document.querySelector(".icon");
+// let icon = document.querySelector(".icon");
 // icon.onclick = function (e) {
 //   console.log((this.style.color = "red"));
 //   console.log(e.target.style);
 // };
 
-icon.addEventListener("dblclick", (e) => {
-  console.log(e.target.style.border);
-});
+// icon.addEventListener("dblclick", (e) => {
+//   console.log(e.target.style.border);
+// });
 
-icon.addEventListener("mouseover", (e) => {
-  console.log((e.target.style.borderRadius = "40px"));
-});
+// icon.addEventListener("mouseover", (e) => {
+//   console.log((e.target.style.borderRadius = "40px"));
+// });
 
-icon.addEventListener("mouseout", (e) => {
-  console.log((e.target.style.borderRadius = "20px"));
-});
+// icon.addEventListener("mouseout", (e) => {
+//   console.log((e.target.style.borderRadius = "20px"));
+// });
 
-icon.addEventListener("mouseup", (e) => {
-  console.log((e.target.style.backgroundColor = "blue"));
-});
+// icon.addEventListener("mouseup", (e) => {
+//   console.log((e.target.style.backgroundColor = "blue"));
+// });
 
-icon.addEventListener("mousedown", (e) => {
-  console.log((e.target.style.backgroundColor = "yellow"));
-});
+// icon.addEventListener("mousedown", (e) => {
+//   console.log((e.target.style.backgroundColor = "yellow"));
+// });
 
-window.addEventListener("mousemove", (e) => {
-  console.log(e);
+// window.addEventListener("mousemove", (e) => {
+//   console.log(e);
+// });
+
+const services = [
+  {
+    title: `Fasted delivery Service`,
+    description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
+    link: "./images/delivery-man 2.svg",
+  },
+  {
+    title: `Online order Service`,
+    description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
+    link: "./images/Vector (2).svg",
+  },
+  {
+    title: `24/8 Service`,
+    description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
+    link: "./images/fast-time 1.svg",
+  },
+];
+
+const innerHTML = (service) => {
+  const content = `<img class="text-[#09A66D] bg-[#F3FBF8] p-5 mr-6 rounded-full"
+    src="${service.link}"
+    alt="img"
+  />
+  <div class="card-info">
+    <h1 class="font-bold text-3xl">${service.title}</h1>
+    <small class="text-sm">
+      ${service.description}
+    </small>
+  </div>`;
+
+  const newCard = createElement(
+    "div",
+    "class",
+    "best-card flex items-center py-10 px-14 hover:shadow-lg hover:bg-blue-50",
+    content
+  );
+  return newCard;
+};
+
+services.forEach((service) => {
+  wrapperCard.append(innerHTML(service));
 });
