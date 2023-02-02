@@ -73,3 +73,33 @@ cards.forEach((card) => {
 
   introProduct.append(newCard);
 });
+
+let icon = document.querySelector(".icon");
+// icon.onclick = function (e) {
+//   console.log((this.style.color = "red"));
+//   console.log(e.target.style);
+// };
+
+icon.addEventListener("dblclick", (e) => {
+  console.log(e.target.style.border);
+});
+
+icon.addEventListener("mouseover", (e) => {
+  console.log((e.target.style.borderRadius = "40px"));
+});
+
+icon.addEventListener("mouseout", (e) => {
+  console.log((e.target.style.borderRadius = "20px"));
+});
+
+icon.addEventListener("mouseup", (e) => {
+  console.log((e.target.style.backgroundColor = "blue"));
+});
+
+icon.addEventListener("mousedown", (e) => {
+  console.log((e.target.style.backgroundColor = "yellow"));
+});
+
+window.addEventListener("mousemove", (e) => {
+  console.log(e);
+});
