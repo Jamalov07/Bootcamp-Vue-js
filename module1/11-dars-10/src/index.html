@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>9-dars</title>
+    <!-- main css -->
+    <link href="/styles/style.css" rel="stylesheet" />
+    <!-- box icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Rosario:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header started -->
+    <header class="py-12 shadow-md">
+      <div class="container bg-white mx-auto">
+        <nav class="nav flex justify-around items-center h-4">
+          <ul class="nav__list hidden justify-between w-1/4 sm:hidden md:flex">
+            <li class="nav__list--item">
+              <a
+                href="#"
+                class="nav__list--item-link hover:text-slate-400 active:text-green-700 duration-200"
+                >About us</a
+              >
+            </li>
+            <li class="nav__list--item">
+              <a
+                href="#"
+                class="nav__list--item-link hover:text-slate-400 active:text-green-700 duration-200"
+                >Service</a
+              >
+            </li>
+            <li class="nav__list--item">
+              <a
+                href="#"
+                class="nav__list--item-link hover:text-slate-400 active:text-green-700 duration-200"
+                >Menu</a
+              >
+            </li>
+            <li class="nav__list--item">
+              <a
+                href="#"
+                class="nav__list--item-link hover:text-slate-400 active:text-green-700 duration-200"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <a class="nav__logo" href="#">
+            <img
+              src="./images/planet-earth (1) 1.svg"
+              alt="img"
+              class="hover:scale-105 duration-200"
+            />
+          </a>
+          <ul
+            class="nav__menu flex w-72 justify-end items-center md:justify-between lg:justify-between"
+          >
+            <li class="nav__menu--item hidden sm:hidden md:block">
+              <span
+                class="bg-green-100 h-10 w-10 flex justify-center items-center rounded-full"
+              >
+                <i class="bx bx-search-alt-2"></i>
+              </span>
+            </li>
+            <li class="nav__menu--item hidden sm:hidden md:block">
+              <span
+                class="bg-green-100 h-10 w-10 flex justify-center items-center rounded-full"
+              >
+                <span><i class="bx bx-cart-download"></i></span>
+              </span>
+            </li>
+            <li class="nav__menu--item">
+              <button
+                class="register-btn bg-green-600 px-6 py-2 rounded-lg text-white hover:bg-green-700 active:text-yellow-300 duration-300 active:bg-green-800"
+              >
+                Register now
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- header finished -->
+    <!-- modal window started -->
+    <div
+      class="modal-window bg-[#00000059] w-full min-h-screen fixed top-0 z-10 hidden"
+    >
+      <div
+        class="modal-content duration-200 w-[800px] min-h-[580px] bg-white mx-auto mt-40 rounded-2xl overflow-hidden"
+      >
+        <div class="modal-header bg-slate-200 text-slate-800 p-4 text-center">
+          <h2 class="font-bold text-2xl uppercase text-slate-800">
+            Registration form:
+          </h2>
+        </div>
+        <div
+          class="modal-body bg-white min-h-[440px] flex justify-center items-center"
+        >
+          <form action="#" class="min-w-[80%] p-3 text-center">
+            <label for="fullname" class="w-full">
+              <p class="mb-2 text-left ml-12">
+                Enter fullname <span class="text-red-600">*</span>
+              </p>
+              <input
+                type="text"
+                class="w-[80%] mx-auto p-3 mb-4 focus:ring-4 focus:ring-sky-400 rounded-sm focus:outline-none border"
+                id="fullname"
+                placeholder="Enter fullname"
+              />
+            </label>
+            <label for="tel" class="w-full">
+              <p class="mb-2 text-left ml-12">
+                Enter phone number <span class="text-red-600">*</span>
+              </p>
+              <input
+                type="tel"
+                class="w-[80%] mx-auto p-3 mb-4 focus:ring-4 focus:ring-sky-400 rounded-sm focus:outline-none border"
+                id="tel"
+                placeholder="Enter phone number"
+              />
+            </label>
+
+            <label for="password" class="w-full">
+              <p class="mb-2 text-left ml-12">
+                Enter password <span class="text-red-600">*</span>
+              </p>
+              <input
+                type="password"
+                class="w-[80%] mx-auto p-3 mb-4 focus:ring-4 focus:ring-sky-400 rounded-sm focus:outline-none border"
+                id="tel"
+                placeholder="Enter password"
+              />
+            </label>
+
+            <button
+              type="submit"
+              class="btn block my-4 w-[80%] mx-auto bg-green-600 px-4 py-2 rounded-lg text-white font-bold hover:bg-green-700 focus:ring-4 focus:ring-green-400 duration-200"
+            >
+              SIGN UP
+            </button>
+          </form>
+        </div>
+        <div class="modal-footer bg-slate-200 text-right p-2">
+          <button
+            class="close-btn bg-red-600 px-4 py-2 rounded-lg m-3 text-white font-bold hover:bg-red-700 focus:ring-4 focus:ring-red-400 duration-200"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- modal window finished -->
+
+    <main>
+      <section class="intro bg-green-50">
+        <div class="container mx-auto text-center">
+          <img
+            class="absolute"
+            src="./images/fresh-melientha-suavis-pierre-leaves-white-surface_51524-12145-removebg-preview 1.png"
+            alt=""
+          />
+          <div class="intro__wrapper w-8/12 mx-auto pt-[93px] text-center">
+            <h1
+              class="text-6xl font-bold w-[783px] mx-auto mb-[26px] leading-[90px]"
+            >
+              Organic Fruit & Vegetables
+            </h1>
+            <p class="text-[#555555] text-lg w-[637px] mx-auto leading-8">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley...
+            </p>
+
+            <div
+              class="intro__link flex items-center mx-auto justify-center h-[70px] mt-[40px]"
+            >
+              <a href="">Order Now </a>
+              <i
+                class="bx bx-right-arrow-alt w-[60px] h-[60px] bg-green-500 flex justify-center items-center text-center text-2xl ml-4 rounded-full text-white hover:bg-green-700 active:text-yellow-300 duration-300 active:bg-green-800 cursor-pointer"
+              ></i>
+            </div>
+          </div>
+          <div class="intro__product flex justify-around">
+            <img
+              src="./images/vegetables-fruits.png"
+              class="w-[862px]"
+              alt="img"
+            />
+            <div class="intro__product--info p-2"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="./script/index.js"></script>
+</html>
