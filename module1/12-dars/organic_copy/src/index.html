@@ -22,6 +22,12 @@
       rel="stylesheet"
     />
 
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
     <title>leeson-9</title>
   </head>
   <body>
@@ -280,10 +286,10 @@
       <section class="comment">
         <div class="container mx-auto">
           <div
-            class="comment_wrapper relative w-4/5 mx-auto overflow-hidden border-2"
+            class="comment_wrapper swiper mySwiper relative w-4/5 mx-auto overflow-hidden border-2"
           >
             <div
-              class="list w-full duration-500 h-auto flex  justify-start"
+              class="list w-full swiper-wrapper duration-500 h-auto flex justify-start"
             ></div>
 
             <!-- <div class="explore__wrapper flex pt-[89px] pb-[143px] relative">
@@ -476,5 +482,17 @@
 
     <script src="./scripts/utils.js"></script>
     <script src="./scripts/index.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".right-icon",
+          prevEl: ".left-icon",
+        },
+      });
+    </script>
   </body>
 </html>

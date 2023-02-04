@@ -162,7 +162,7 @@ const rightBtn = document.querySelector(".right-icon");
 carouselData.forEach((carousel) => {
   const element = createElement(
     "div",
-    "explore__wrapper flex pt-[89px] pb-[143px] relative min-w-[1239px]  px-3 duration-500 bg-sky-500",
+    "explore__wrapper swiper-slide flex pt-[89px] pb-[143px] relative min-w-[1239px]  px-3 duration-500",
     `              <div class="explore__info">
   <h1
     class="text-6xl font-bold w-[640px] mb-[20px] leading-[90px] mt-[20px]"
@@ -192,31 +192,31 @@ carouselData.forEach((carousel) => {
 });
 
 const explore__wrapper = document.querySelectorAll(".explore__wrapper");
-let index = 0;
+// let index = 0;
 
-function slider() {
-  if (index > carouselData.length - 1) {
-    index = 0;
-  }
-  if (index < 0) {
-    index = carouselData.length - 1;
-  }
-  list.style.transform = `translateX(${index * -1239}px)`;
-}
+// function slider() {
+//   if (index > carouselData.length - 1) {
+//     index = 0;
+//   }
+//   if (index < 0) {
+//     index = carouselData.length - 1;
+//   }
+//   list.style.transform = `translateX(${index * -1239}px)`;
+// }
 
-const playCarousel = setInterval(() => {
-  index++;
-  slider();
-}, 3500);
+// const playCarousel = setInterval(() => {
+//   index++;
+//   slider();
+// }, 3500);
 
-leftBtn.addEventListener("click", () => {
-  index--;
-  slider();
-  clearInterval(playCarousel);
-});
+// leftBtn.addEventListener("click", () => {
+//   index--;
+//   slider();
+//   clearInterval(playCarousel);
+// });
 
-rightBtn.addEventListener("click", () => {
-  index++;
-  slider();
-  clearInterval(playCarousel);
-});
+// rightBtn.addEventListener("click", () => {
+//   index++;
+//   slider();
+//   clearInterval(playCarousel);
+// });
