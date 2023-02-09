@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <!-- main css -->
+    <link href="./styles/style.css" rel="stylesheet" />
+    <!-- box icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="">
+    <div
+      class="container mx-auto w-screen h-screen flex justify-center items-center"
+    >
+      <div
+        class="form-wrapper w-2/5 flex flex-col justify-between items-center h-[423px]"
+      >
+        <img src="./images/Group 200.svg" alt="logo" class="w-3/4" />
+        <form action="" class="flex flex-col justify-around h-[200px] w-full">
+          <label
+            for="username"
+            class="flex bg-transparent py-[13px] border-[1px] rounded-md w-full px-auto justify-start items-center"
+          >
+            <i class="bx bx-user text-2xl text-white px-7"></i>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="USERNAME"
+              class="bg-transparent placeholder:text-white placeholder:font-light focus:outline-none text-white"
+            />
+          </label>
+          <label
+            for="password"
+            class="flex bg-transparent py-[13px] border-[1px] rounded-md w-full px-auto justify-start items-center"
+          >
+            <i class="bx bx-lock-alt text-2xl text-white px-7"></i>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="PASSWORD"
+              class="bg-transparent placeholder:text-white placeholder:font-light focus:outline-none text-white"
+            />
+          </label>
+        </form>
+        <button
+          type="submit"
+          class="login-btn w-full py-[13px] px-auto text-blue-600 bg-white rounded-md hover:bg-blue-300 duration-300"
+        >
+          LOGIN
+        </button>
+        <div class="text-white text-end w-full hover:text-blue-400">
+          <a href="#">Forgot Password?</a>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="./utils/utils.js"></script>
+  <script src="./script/script.js"></script>
+</html>
