@@ -220,3 +220,31 @@ const explore__wrapper = document.querySelectorAll(".explore__wrapper");
 //   slider();
 //   clearInterval(playCarousel);
 // });
+
+// === animate zoom =====
+let body = document.querySelector("body");
+let header = document.querySelector("header");
+let intro = document.querySelector(".intro-wrapper");
+let info_content = document.querySelector(".info__content---items");
+let person = document.querySelector(".imgbola");
+window.document.addEventListener("scroll", (e) => {
+  console.log(window.scrollY);
+  let scrollY = window.scrollY;
+  if (scrollY > 232) {
+    header.classList.add("top-0", "w-full", "bg-white", "z-10", "duration-700");
+  } else {
+    header.classList.remove("fixed");
+  }
+
+  // if (scrollY > 543) {
+  //   info_content.classList.remove("-translate-x-96");
+  //   person.classList.remove("translate-x-96");
+  // } else {
+  //   info_content.classList.add("-translate-x-96");
+  //   person.classList.add("translate-x-96");
+  // }
+});
+
+document.addEventListener("DOMContentLoaded", (e) => {
+  intro.classList.remove("translate-y-60");
+});

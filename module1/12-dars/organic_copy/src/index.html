@@ -21,6 +21,8 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Rosario:wght@700&display=swap"
       rel="stylesheet"
     />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!-- Link Swiper's CSS -->
     <link
@@ -178,7 +180,9 @@
     <main>
       <!-- intro started -->
       <section class="intro bg-green-50">
-        <div class="container mx-auto text-center relative">
+        <div
+          class="container mx-auto text-center relative intro-wrapper translate-y-60 duration-500"
+        >
           <img
             src="./images/fresh-melientha-suavis-pierre-leaves-white-surface_51524-12145-removebg-preview 1.png"
             class="absolute left-0 top-0"
@@ -238,9 +242,17 @@
               class="absolute -top-[170px] -z-10 -right-24"
             />
           </div>
-          <div class="info__content w-4/5 mx-auto flex justify-between">
-            <div class="info__content---items flex flex-col mt-14"></div>
-            <img src="./images/bola.png" alt="bola" />
+          <div
+            class="info__content w-4/5 mx-auto flex justify-between duration-500"
+          >
+            <div
+              class="info__content---items flex flex-col mt-14 duration-400"
+            ></div>
+            <img
+              src="./images/bola.png"
+              alt="bola"
+              class="imgbola duration-400"
+            />
           </div>
         </div>
       </section>
@@ -251,8 +263,12 @@
           <div
             class="explore__wrapper flex w-4/5 mx-auto pt-[89px] pb-[143px] relative overflow-hidden"
           >
-            <img src="./images/Group 5287.jpg" alt="explor_img" />
-            <div class="explore__info mx-[50px]">
+            <img
+              src="./images/Group 5287.jpg"
+              alt="explor_img"
+              data-aos="fade-right"
+            />
+            <div class="explore__info mx-[50px]" data-aos="fade-left">
               <h1
                 class="text-6xl font-bold w-[557px] mb-[20px] leading-[90px] mt-[20px]"
               >
@@ -344,7 +360,12 @@
       </section>
       <!-- Comment section finished -->
       <!-- download section startded -->
-      <section class="download">
+
+      <section
+        class="download"
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-center"
+      >
         <div class="container mx-auto">
           <div class="download__wrapper w-4/5 mx-auto flex mb-[146px]">
             <div class="w-[50%] relative">
@@ -484,9 +505,11 @@
     <script src="./scripts/index.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Initialize Swiper -->
     <script>
+      AOS.init();
       var swiper = new Swiper(".mySwiper", {
         navigation: {
           nextEl: ".right-icon",
