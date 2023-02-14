@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- vue cdn -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- talwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./styles/style.css" rel="stylesheet" />
+    <!-- box icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+
+    <style>
+      .swipe {
+        transform: translateX(-220%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <header class="bg-green-600 w-full">
+        <div class="container mx-auto px-5">
+          <nav class="nav flex justify-between h-[70px] items-center">
+            <a href="#" class="text-white text-2xl">VUE.JS BOOTCAMP</a>
+            <i class="bx bx-menu text-3xl text-white" @click="setToggle()"></i>
+          </nav>
+        </div>
+      </header>
+
+      <main class="min-h-screen flex">
+        <aside
+          class="bg-white w-1/6 shadow-2xl min-h-screen duration-500"
+          ref="toggleMenu"
+          v-if="toggle"
+        >
+          <ul class="list cursor-pointer">
+            <li
+              class="list__item p-4 bg-green-100 m-1 text-slate-800 font-semibold rounded-lg uppercase hover:bg-green-200 shadow duration-200"
+              v-for="item in navLinks"
+              :key="item.id"
+            >
+              <a href="#" class="list__item-link">{{item.title}}</a>
+            </li>
+          </ul>
+        </aside>
+        <section
+          class="main bg-sky-300 w-5/6 min-h-screen flex-grow duration-200"
+          ref="mainSection"
+        >
+          <div class="container mx-auto">
+            <!--  -->
+            <div
+              class="card w-[1200px] min-h-[400px] mx-auto shadow-2xl bg-white m-5 p-5"
+            >
+              <div
+                v-show="!loading"
+                class="box w-[200px] h-[200px] flex justify-center items-center mx-auto mt-12"
+              >
+                <span class="loader"></span>
+              </div>
+              <!-- render posts -->
+              <ul class="list_posts">
+                <li
+                  class="bg-white shadow-xl rounded-xl p-4 border my-2 flex gap-x-3 items-center"
+                  v-for="(item,index) in postList"
+                >
+                  <span
+                    class="bg-sky-400 w-[24px] h-[24px] rounded-full flex justify-center items-center font-bold"
+                    >{{index+1}}</span
+                  >
+                  <p>{{item.title}}</p>
+                </li>
+              </ul>
+            </div>
+            <!--  -->
+            <div
+              class="card w-[1200px] min-h-[400px] mx-auto shadow-2xl bg-white m-5 p-5"
+            >
+              <form action="#" @submit="addNewTask()">
+                <label for="taskname" class="w-4/5">
+                  <p class="text-slate-800 ml-32 mb-4 font-bold">
+                    Enter task title
+                  </p>
+                  <input
+                    type="text"
+                    class="p-4 border w-4/5 focus:ring-2 focus:ring-green-300 focus:outline-none mx-auto block"
+                    id="taskname"
+                    v-bind:value="taskName"
+                    @input="e=>taskName=e.target.value"
+                  />
+                </label>
+
+                <label for="taskdate" class="w-4/5">
+                  <p class="text-slate-800 ml-32 mb-4 font-bold mt-4">
+                    Input task date
+                  </p>
+                  <input
+                    type="date"
+                    class="p-4 border w-4/5 focus:ring-2 focus:ring-green-300 focus:outline-none mx-auto block"
+                    id="taskdate"
+                    v-bind:value="taskDeadLine"
+                    @input="e=>taskDeadLine=e.target.value"
+                  />
+                </label>
+                <button
+                  class="bg-green-500 p-5 mx-auto block my-5 w-4/5 text-lg font-bold focus:ring-4 focus:ring-slate-300 focus:text-white"
+                >
+                  ADD NEW TASK
+                </button>
+              </form>
+            </div>
+            <div
+              class="card w-[1200px] min-h-[400px] mx-auto shadow-2xl bg-white m-5 p-5"
+            >
+              <ul v-if="tasks.length">
+                <li
+                  class="p-5 bg-green-200 rounded-lg my-3"
+                  v-for="item in tasks"
+                >
+                  {{item.title}}
+                </li>
+              </ul>
+              <ul v-else class="list-task">
+                TASK NOT FOUND
+              </ul>
+            </div>
+            <div
+              class="card w-[1200px] min-h-[400px] mx-auto shadow-2xl bg-white m-5 p-5 grid grid-cols-3 gap-x-4 gap-y-2"
+            >
+              <h1
+                v-if="!users.length"
+                class="text-center font-bold text-red-500"
+              >
+                NOT FOUND USER
+              </h1>
+              <div
+                v-for="item in users"
+                class="card__item w-[300px] min-h-[400px] shadow-lg bg-white"
+              >
+                <img :src="item.avatar" alt="img" class="h-[300px] w-full" />
+                <div class="card__item-body p-5">
+                  <h1 class="text-center font-semibold text-xl uppercase">
+                    {{item.first_name}} {{item.last_name}}
+                  </h1>
+                  <h2 class="text-center font-medium">{{item.email}}</h2>
+                  <span
+                    :class="item.isOnline ? 'bg-green-500' : 'bg-red-700'"
+                    class="text-white font-semibold text-center p-2 rounded-lg block mt-8"
+                    >{{`${item.isOnline ? "Online" : "Offline"}`}}</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="bg-green-600">
+        <div class="container">
+          <p class="text-center text-white font-bold">
+            {{ new Date().getFullYear()}}
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <!-- main js -->
+  <script src="./app.js"></script>
+</html>
