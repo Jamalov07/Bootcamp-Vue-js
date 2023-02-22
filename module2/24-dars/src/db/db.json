@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Smith",
+      "email": "john@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "John MackDuck",
+      "email": "JohnM@gmail.com"
+    },
+    {
+      "id": "69864cae-ae65-4d58-aed3-0713a2acea6e",
+      "name": "asdf",
+      "email": "Jamalovn07@gmail.com"
+    },
+    {
+      "id": "f1929dfd-83ec-47e4-ac61-758e28c83bc9",
+      "name": "asasa",
+      "email": "Jamalovn07@gmail.com"
+    },
+    {
+      "id": "6d4a23b7-e49c-49d8-a069-7e2985bb43e4",
+      "name": "jamalov",
+      "email": "dsc@gmIL.RT"
+    }
+  ]
+}
