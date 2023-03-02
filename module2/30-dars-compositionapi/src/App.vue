@@ -1,9 +1,9 @@
-<script setup></script>
+<script setup>
+import Card from "./components/Card/Card.vue";
+</script>
 
 <template>
-  <div class="container">
-    <div class="d-flex flex-wrap justify-content-around w-100"></div>
-  </div>
+  <Card />
 </template>
 
-<style scoped></style>
+<style></style>

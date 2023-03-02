@@ -1,13 +1,9 @@
 import { createStore } from "vuex";
-
+import getAllPosts from "../modules/getAllPosts";
 const store = createStore({
-    state() {
-        
+  modules: {
+    getAllPosts,
   },
-  mutations: {},
-  actions: {},
-  getters: {},
-  modules: {},
 });
 
 export default store;
