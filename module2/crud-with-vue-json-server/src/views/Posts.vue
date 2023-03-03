@@ -3,6 +3,7 @@ import { onMounted, onUpdated } from "vue";
 import { useStore } from "vuex";
 import { ref } from "vue";
 const store = useStore();
+
 let newTitle = ref("").value;
 let newBody = ref("").value;
 
@@ -21,6 +22,9 @@ function sendPostBody() {
     body: newBody,
   };
   store.dispatch("createPost", post);
+  newTitle = "";
+  newBody = "";
+  store.dispatch("getPosts");
 }
 </script>
 
@@ -54,8 +58,11 @@ function sendPostBody() {
       </button>
     </div>
 
-    <div
-      v-for="post in $store.state.getAllPosts.posts"
+    <RouterLink
+      v-if="store.state.getAllPosts.posts.length"
+      :to="`posts/${post.id}`"
+      @click="store.dispatch('getPost', post.id)"
+      v-for="post in store.state.getAllPosts.posts"
       :key="post.id"
       class="p-2 flex flex-col gap-2 text-center bg-purple-800 mt-4 rounded border-2 border-red-600"
     >
@@ -65,6 +72,11 @@ function sendPostBody() {
       <h2 class="text-amber-800 font-light text-2xl p-2 bg-emerald-500">
         {{ post.body }}
       </h2>
+    </RouterLink>
+    <div v-else="store.state.getAllPosts.posts">
+      <h1 class="text-red-600 font-medium text-3xl uppercase text-center">
+        the post list is empty
+      </h1>
     </div>
   </div>
 </template>

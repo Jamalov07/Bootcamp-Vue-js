@@ -2,7 +2,7 @@ import axios from "../../service/axios";
 
 const getOnePost = {
   state: () => ({
-    post: null,
+    post: {},
     isLoading: true,
     errorMessage: "",
   }),
@@ -22,7 +22,7 @@ const getOnePost = {
     async getPost({ commit }, id) {
       try {
         const post = await axios.get(`/posts/${id}`);
-        console.log(post);
+        console.log(post,"bu post");
         commit("GET_POST", post.data);
         commit("SET_LOADING", false);
       } catch (error) {

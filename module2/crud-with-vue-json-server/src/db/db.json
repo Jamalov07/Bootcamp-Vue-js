@@ -1,29 +1,3 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "title": "Lorem",
-      "body": "ipsum"
-    },
-    {
-      "id": 1677858270602,
-      "title": "salom",
-      "body": "alik"
-    },
-    {
-      "id": 1677858345844,
-      "title": "error",
-      "body": "verror"
-    },
-    {
-      "id": 1677858413633,
-      "title": "qwertyui",
-      "body": "qwertyui"
-    },
-    {
-      "id": 1677858419262,
-      "title": "qwertyuiqwqw",
-      "body": "qwertyui"
-    }
-  ]
+  "posts": []
 }
