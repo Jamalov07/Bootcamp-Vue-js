@@ -1,9 +1,7 @@
+<script setup></script>
 <template>
-  <div>Home</div>
+  <div class="w-full bg-[#D9D9D9] rounded-[8px] p-4 text-[#0000FF]">
+    Home page
+  </div>
 </template>
-<script>
-export default {
-  name: "Home",
-};
-</script>
 <style></style>
