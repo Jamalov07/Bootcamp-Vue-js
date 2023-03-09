@@ -1,5 +1,8 @@
-<script setup></script>
+<script setup>
+import MainApp from "./layout/MainApp.vue";
+</script>
 
-<template></template>
-
+<template>
+  <MainApp />
+</template>
 <style scoped></style>
