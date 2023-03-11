@@ -9,7 +9,7 @@ import Login from "./views/Login.vue";
 const router = useRouter();
 </script>
 <template>
-  <template v-if="checkToken(router)">
+  <!-- <template v-if="checkToken(router)">
     <div class="main py-[30px] px-[70px]">
       <div class="flex justify-between gap-4">
         <Sidebar />
@@ -20,9 +20,9 @@ const router = useRouter();
       </div>
     </div>
   </template>
-  <template v-else>
-    <Login />
-  </template>
+  <template v-else> -->
+  <Login />
+  <!-- </template> -->
 </template>
 <style scoped>
 .main {

@@ -1,4 +1,4 @@
-import axios from "../service/axios";
+import axios from "../../service/axios";
 
 const signin = {
   state: () => ({
