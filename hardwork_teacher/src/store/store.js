@@ -1,7 +1,8 @@
 import { createStore } from "vuex";
-import signin from "./modules/login";
+import { stuffLogin } from "./modules/stuff/stuffLogin";
+
 const store = createStore({
-  modules: { signin },
+  modules: { stuffLogin },
 });
 
 export default store;

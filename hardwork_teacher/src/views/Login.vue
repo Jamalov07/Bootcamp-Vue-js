@@ -12,75 +12,93 @@
           <h1 class="text-[20px] font-medium">Hardwork</h1>
         </div>
         <div
-          class="flex flex-col justify-between w-[357px] h-[340px] text-[#212121] font-medium"
+          class="flex flex-col justify-between gap-5 w-[357px] h-[340px] text-[#212121] font-medium mx-[16px]"
         >
           <h1 class="text-[28px]">Kirish</h1>
-          <label
-            for="tel"
-            class="w-full block text-[13px]"
-            :class="false ? 'text-[#C72616]' : ''"
+          <form
+            action="#"
+            class="flex flex-col justify-between h-full"
+            @submit="loginStuff"
           >
-            <p>Telefon raqam*</p>
-            <input
-              v-model="phone"
-              placeholder="Telefon raqamingizni kiriting"
-              type="tel"
-              name="tel"
-              class="w-full my-[7px] px-[14px] py-[10px] text-[16px] placeholder:text-[#D9D9D9] placeholder:text-[16px] border border-[#E2E1E2] rounded-[7px] outline-none focus:ring-2 ring-blue-500"
-              :class="false ? 'border-[#C72616]' : 'border-[#E2E1E2]'"
-            />
-            <div class="flex gap-[6px]" v-if="false">
-              <img src="../assets/images/Frame (2).svg" alt="info" />
-              <p>Raqam noto'g'ri</p>
-            </div>
-          </label>
-
-          <label
-            for="password"
-            class="w-full text-[13px]"
-            :class="false ? 'text-[#C72616]' : ''"
-          >
-            <p>Parol*</p>
-            <div
-              @click="selectPassword"
-              class="flex px-[14px] border border-[#E2E1E2] ring-blue-500 rounded-[7px] my-[7px] wrapper"
-              :class="isPasswordSelected ? 'ring-2' : ''"
+            <label
+              for="tel"
+              class="w-full block text-[13px] h-[80px]"
+              :class="wrongLogin ? 'text-[#C72616]' : ''"
             >
+              <p>Telefon raqam*</p>
               <input
-                v-model="password"
-                placeholder="Parolni kiriting"
-                :type="isPasswordType ? 'password' : 'text'"
-                name="password"
-                class="w-full py-[10px] text-[16px] placeholder:text-[#D9D9D9] placeholder:text-[16px] ring-0 outline-none"
+                @click="changeWrongPhone"
+                v-model="phone"
+                placeholder="Telefon raqamingizni kiriting"
+                type="tel"
+                name="tel"
+                class="w-full my-[7px] px-[14px] py-[10px] text-[16px] text-[#212121] placeholder:text-[#D9D9D9] placeholder:text-[16px] border border-[#E2E1E2] rounded-[7px] outline-none focus:ring-2 ring-blue-500"
+                :class="wrongLogin ? 'border-[#C72616]' : 'border-[#E2E1E2]'"
               />
-              <img
-                @click="changePasswordType"
-                v-if="isPasswordType"
-                src="../assets/images/Frame.svg"
-                alt="eye"
-              />
-              <img
-                @click="changePasswordType"
-                v-if="!isPasswordType"
-                src="../assets/images/Frame (1).svg"
-                alt="eye"
-              />
-            </div>
-            <div class="flex gap-[6px]" v-if="false">
-              <img src="../assets/images/Frame (2).svg" alt="info" />
-              <p>Parol noto'g'ri</p>
-            </div>
-          </label>
-          <button
-            class="w-full rounded-[7px] py-[10px] px-auto text-[16px] text-white"
-            :class="
-              phone.length > 5 && password.length > 5
-                ? 'bg-[#734DB6]'
-                : 'bg-[#CCBDE7]'
-            "
-          >
-            Tizimga kirish
-          </button>
+              <div class="flex gap-[6px]" v-if="wrongLogin">
+                <img src="../assets/images/Frame (2).svg" alt="info" />
+                <p>Raqam noto'g'ri</p>
+              </div>
+            </label>
+
+            <label
+              for="password"
+              class="w-full text-[13px] h-[80px]"
+              :class="wrongPassword ? 'text-[#C72616]' : ''"
+            >
+              <p>Parol*</p>
+              <div
+                @click="selectPassword"
+                class="flex px-[14px] border ring-blue-500 rounded-[7px] my-[7px] wrapper"
+                :class="
+                  isPasswordSelected ? 'ring-2' : '',
+                  wrongPassword ? 'border-[#C72616]' : 'border-[#E2E1E2]'
+                "
+              >
+                <input
+                  @click="changeWrongPassword"
+                  v-model="password"
+                  placeholder="Parolni kiriting"
+                  :type="isPasswordType ? 'password' : 'text'"
+                  name="password"
+                  class="w-full py-[10px] text-[16px] placeholder:text-[#D9D9D9] placeholder:text-[16px] text-[#212121] ring-0 outline-none"
+                />
+                <img
+                  @click="changePasswordType"
+                  v-if="!wrongPassword && isPasswordType"
+                  src="../assets/images/Frame.svg"
+                  alt="eye"
+                />
+                <img
+                  @click="changePasswordType"
+                  v-if="!wrongPassword && !isPasswordType"
+                  src="../assets/images/Frame (1).svg"
+                  alt="eye"
+                />
+                <img
+                  @click="changePasswordType"
+                  v-if="wrongPassword"
+                  src="../assets/images/Frame (3).svg"
+                  alt="eye"
+                />
+              </div>
+              <div class="flex gap-[6px]" v-if="wrongPassword">
+                <img src="../assets/images/Frame (2).svg" alt="info" />
+                <p>Parol noto'g'ri</p>
+              </div>
+            </label>
+            <button
+              type="submit"
+              class="w-full rounded-[7px] py-[10px] px-auto text-[16px] text-white"
+              :class="
+                phone.length > 5 && password.length > 5
+                  ? 'bg-[#734DB6]'
+                  : 'bg-[#CCBDE7]'
+              "
+            >
+              Tizimga kirish
+            </button>
+          </form>
         </div>
       </div>
       <div class="w-[927px] h-screen grad flex justify-center items-center">
@@ -100,6 +118,8 @@ export default {
     return {
       isPasswordSelected: false,
       isPasswordType: true,
+      wrongLogin: false,
+      wrongPassword: false,
       phone: "",
       password: "",
     };
@@ -120,6 +140,40 @@ export default {
     },
     changePasswordType() {
       this.isPasswordType = !this.isPasswordType;
+    },
+
+    async loginStuff(e) {
+      e.preventDefault();
+      if (this.password.length > 5 && this.phone.length > 5) {
+        const body = {
+          username: this.phone,
+          password: this.password,
+        };
+        const response = await this.$store.dispatch("STUFFLOGIN", body);
+        console.log(response);
+        if (
+          response.statusCode == 401 &&
+          response.message === "User not registered1"
+        ) {
+          console.log("login");
+          this.wrongLogin = true;
+          this.wrongPassword = false;
+        } else if (
+          response.statusCode == 401 &&
+          response.message === "User not registered2"
+        ) {
+          console.log("password");
+          this.wrongPassword = true;
+          this.wrongLogin = false;
+        }
+      }
+    },
+
+    changeWrongPhone() {
+      this.wrongLogin = false;
+    },
+    changeWrongPassword() {
+      this.wrongPassword = false;
     },
   },
 };

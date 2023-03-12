@@ -6,6 +6,7 @@ import Sidebar from "./components/Sidebar.vue";
 import { RouterView } from "vue-router";
 import checkToken from "./helper/checkToken";
 import Login from "./views/Login.vue";
+import Register from "./views/Register.vue";
 const router = useRouter();
 </script>
 <template>
@@ -21,7 +22,8 @@ const router = useRouter();
     </div>
   </template>
   <template v-else> -->
-  <Login />
+  <!-- <Login /> -->
+  <Register />
   <!-- </template> -->
 </template>
 <style scoped>
